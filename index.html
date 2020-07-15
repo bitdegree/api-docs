@@ -1,0 +1,156 @@
+<!--
+ API Documentation HTML Template  - 1.0.0
+ Copyright © 2016 Florian Nicolas
+ Licensed under the MIT license.
+ https://github.com/ticlekiwi/API-Documentation-HTML-Template
+ !-->
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>API - Documentation</title>
+        <meta name="description" content="">
+
+        <meta http-equiv="cleartype" content="on">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/hightlightjs-dark.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500|Source+Code+Pro:300" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css" media="all">
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+
+    <body>
+        <div class="left-menu">
+            <div class="content-logo">
+                <img src="/images/bitdegree.png" />
+            </div>
+            <div class="content-menu">
+                <ul>
+                    <li class="scroll-to-link active" data-target="get-started">
+                        <a>GET STARTED</a>
+                    </li>
+                    <li class="scroll-to-link" data-target="get-characters">
+                        <a>Get Courses</a>
+                    </li>
+                    <li class="scroll-to-link" data-target="errors">
+                        <a>Errors</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-page">
+            <div class="content">
+                <div class="overflow-hidden content-section" id="content-get-started">
+                    <h1 id="get-started">Get started</h1>
+                    <p>
+                        BitDegree API is currently at version 1.0 and the root endpoint is <strong>https://www.bitdegree.org/api/v1.0/</strong> for all resources.
+                    </p>
+                    <p>
+                        To use this API, you need an <strong>API key</strong>. API key can be generated on <a href="https://www.bitdegree.org/user/affiliates/api" target="_blank">BitDegree website</a>.
+                    </p>
+                </div>
+                <div class="overflow-hidden content-section" id="content-get-characters">
+                    <h2 id="get-characters">get courses</h2>
+                    <p>
+                        To get courses you need to make a GET call to the following url :<br>
+                        <code class="higlighted">https://www.bitdegree.org/api/v1.0/courses</code>
+                    </p>
+                    <h4>QUERY PARAMETERS</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>api_key</td>
+                                <td>String</td>
+                                <td>Your API key.</td>
+                            </tr>
+                            <tr>
+                                <td>page</td>
+                                <td>Integer</td>
+                                <td>(optional - default: 1) A numeric value indicating the current page. </td>
+                            </tr>
+                            <tr>
+                                <td>page_size</td>
+                                <td>Integer</td>
+                                <td>
+                                    (optional - default: 15) A numeric value indicating the page size. Max: 100
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>instructor_data</td>
+                                <td>Boolean</td>
+                                <td>
+                                    (optional) If true, courses will have instructor data<br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>category_data</td>
+                                <td>Boolean</td>
+                                <td>
+                                    (optional) If true, courses will have category data<br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="overflow-hidden content-section" id="content-errors">
+                    <h2 id="errors">Errors</h2>
+                    <p>
+                        BitDegree API uses the following error codes:
+                    </p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Error Code</th>
+                                <th>Meaning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>400</td>
+                                <td>
+                                    Missing header <code>Accept: application/json</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>401</td>
+                                <td>
+                                    Unknown, missing or invalid <code>api_key</code>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>414</td>
+                                <td>
+                                    Request parameters are too long. Maximum length: 190
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>429</td>
+                                <td>
+                                    Daily request limit reached.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>500</td>
+                                <td>
+                                    Server error
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="js/libs/jquery.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
